@@ -382,14 +382,14 @@ img {
 }
 
 .fa-brands.fa-github,
-.fa-brands.fa-discord,
+.fa-brands.fa-linkedin,
 .fa-brands.fa-instagram {
     color: rgb(168, 162, 162);
     font-size: 18px;
 }
 
 .fa-brands.fa-github:hover,
-.fa-brands.fa-discord:hover,
+.fa-brands.fa-linkedin:hover,
 .fa-brands.fa-instagram:hover {
     color: var(--primarily-color);
     transition: 0.5s;
