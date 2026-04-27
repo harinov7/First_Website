@@ -1,0 +1,537 @@
+@font-face {
+    src: url(Fonts/AtkinsonHyperlegibleMono-Bold.ttf);
+    font-family: Atkison;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primarily-color: rgb(117, 4, 4);
+    --shadow-color: rgb(117, 4, 4);
+    --border-color: rgb(117, 4, 4);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    margin-top: 70px;
+    background-color: hsl(0, 0%, 7%);
+    overflow-x: hidden;
+}
+
+h2 {
+    font-family: Atkison;
+    color: rgb(168, 162, 162);
+}
+
+h3 {
+    font-family: Atkison;
+    color: rgb(168, 162, 162);
+}
+
+p {
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(168, 162, 162);
+    font-weight: bold;
+}
+
+img, 
+video {
+    width: 100%;
+    max-width: 100%;
+}
+
+.navigasi {
+    position: fixed;
+    z-index: 999;
+    top:0;
+    width: 100%;
+    box-shadow: 0px 5px 10px var(--shadow-color);
+}
+
+.navigasi a {
+    text-decoration: none;
+    color: rgb(168, 162, 162)
+}
+
+.navigasi a:hover {
+    color: var(--primarily-color);
+    transition: 0.5s;
+}
+
+.navigasi ul{
+    background-color: hsl(0, 0%, 7%);
+    margin: 0;
+    padding: 10px;
+    list-style-type: none;
+    gap: 100px;
+    display: flex;
+    justify-content: center;
+    font-family: Atkison;
+    font-size: 18px;
+}
+
+#Home {
+    padding-top: 100px;
+    padding-left: 100px;
+    scroll-margin-top: 70px;
+}
+
+.intro1 {
+    font-size: 16px;
+    margin: 0
+}
+
+.intro2 {
+    margin: 0;
+    font-size: 80px;
+}
+
+.highlight {
+    color: var(--primarily-color);
+    font-size: 50px;
+}
+
+.prefix {
+    color: var(--primarily-color);
+}
+
+.arrow {
+    margin-top: 200px;
+    text-align: center;
+    color: var(--primarily-color);
+    cursor: default;
+    animation: arrowbounce 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+@keyframes arrowbounce {
+    0%, 100% {
+        transform: rotate(90deg) scale(1,4) translateX(0px);
+    }
+    50% {
+        transform: rotate(90deg) scale(1,4) translateX(-7px);
+    }
+}
+
+.scroll {
+    text-align: center;
+    color: var(--primarily-color);
+    cursor: default;
+    font-weight: bold;
+}
+
+#Portfolio {
+    padding: 100px;
+    padding-top: 300px;
+    scroll-margin-top: -200px;
+}
+
+.borderhor {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.borderhor .intro1 {
+    font-size: 60px;
+}
+
+.borderhor .pembatas {
+    flex: 1;
+    border-top: 3px solid var(--border-color);
+    border-radius: 10px;
+}
+
+.heroport {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.heroport .left-portfolio,
+.heroport .right-portfolio {
+    display: grid;
+    flex: 1;
+    gap: 20px;
+    width: fit-content;
+}
+
+.card {
+    display: flex;
+    border: 1px solid rgb(80, 80, 80);
+    background-color: rgb(27, 27, 27);
+    border-radius: 5px;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    padding: 20px;
+    transition: transform .3s ease,
+                border-color .2s ease,
+                box-shadow .3s ease;
+}
+
+.card h3 {
+    margin-bottom: 20px;
+}
+
+video,
+img {
+    margin: auto;
+    border-radius: 10px;
+}
+
+.heromodelling {
+    display: flex;
+    gap: 20px;
+}
+
+.card-shortanm {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgb(80, 80, 80);
+    background-color: rgb(27, 27, 27);
+    border-radius: 5px;
+    text-align: center;
+    margin: 10px auto 0 auto;
+    margin-top: 10px;
+    padding: 10px;
+    width: fit-content;
+    transition: transform .3s ease,
+                border-color .2s ease,
+                box-shadow .3s ease;
+}
+
+.card:hover,
+.card-shortanm:hover {
+    border-color: var(--border-color);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(157, 7, 7, 0.2);
+}
+
+.judul-skill {
+    position: relative;
+    font-size: 28px;
+}
+
+.card h3 {
+    cursor: pointer;
+}
+
+.tooltip {
+    position: absolute;
+    top: 35px;
+    right: 50%;
+    transform: translateX(50%);
+
+    white-space: nowrap;
+    font-size: 12px;
+    border: 1px solid rgb(80, 80, 80);
+    background-color: rgba(32, 7, 7, 0.303);
+
+    opacity: 0;
+    transition: 0.3s;
+    pointer-events: none;
+}
+
+.mark {
+    position: absolute;
+    width: 15px;
+    left: 168%;
+    bottom: -5px;
+
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.mark-modelling {
+    position: absolute;
+    width: 15px;
+    left: 120%;
+    bottom: -5px;
+
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.mark-lrc {
+    position: absolute;
+    width: 15px;
+    left: 345%;
+    bottom: -5px;
+
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.mark-rigging {
+    position: absolute;
+    width: 15px;
+    left: 170%;
+    bottom: -5px;
+
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.mark-shortanm {
+    position: absolute;
+    width: 15px;
+    left: 98%;
+    bottom: -4px;
+
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.judul-skill:hover .tooltip,
+.judul-skill:hover .mark,
+.judul-skill:hover .mark-modelling,
+.judul-skill:hover .mark-lrc,
+.judul-skill:hover .mark-rigging,
+.judul-skill:hover .mark-shortanm {
+    opacity: 1;
+}
+
+.card-shortanm .judul-skill {
+    cursor: pointer;
+}
+
+.shortanm {
+    border: 1px solid rgb(80, 80, 80);
+    background-color: rgb(27, 27, 27);
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    margin-top: 10px;
+    max-width: 515px;
+}
+
+.card-shortanm .judul-skill{
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+.footage {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+#Contact {
+    padding:100px;
+}
+
+.contact-title{
+    display:flex;
+    align-items:center;
+    gap:20px;
+    margin-bottom:40px;
+}
+
+.contact-title h2{
+    font-size:60px;
+    margin:0;
+}
+
+.line{
+    flex:1;
+    height:2px;
+    border-top:2px solid var(--border-color);
+}
+
+.contact-container{
+    display:flex;
+    gap:60px;
+}
+
+/* kiri */
+.contact-left{
+    flex:1;
+}
+
+.contact-left p{
+    font-family: Arial, Helvetica, sans-serif;
+    line-height:1.8;
+    max-width:600px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.info-list{
+    margin-top:30px;
+    display:grid;
+    gap:20px;
+}
+
+.social{
+    margin-top:50px;
+    display:flex;
+    gap:20px;
+}
+
+/* kanan */
+.contact-right{
+    flex:1;
+}
+
+.row{
+    display:flex;
+    gap:15px;
+    margin-bottom:15px;
+}
+
+input,
+textarea{
+    width:100%;
+    background:#1b1b1b;
+    border:1px solid #444;
+    border-radius: 2px;
+    padding:10px;
+    color:white;
+    font-size:16px;
+    box-sizing: border-box;
+}
+
+textarea{
+    height:280px;
+    resize:none;
+}
+
+button{
+    margin-top:20px;
+    background:var(--primarily-color);
+    border:none;
+    border-radius: 7px;
+    padding:15px 30px;
+    font-size:18px;
+    cursor:pointer;
+}
+
+button:hover{
+transform:translateY(-3px);
+transition:.3s;
+}
+
+input:focus,
+textarea:focus{
+outline:none;
+border-color: var(--primarily-color);
+}
+
+/* =======================
+TABLET
+======================= */
+@media (max-width: 1024px){
+
+    .navigasi ul{
+        gap: 120px;
+        font-size:16px;
+    }
+
+    #Home{
+        padding:60px;
+    }
+
+    .intro2{
+        font-size:60px;
+    }
+
+    #Portfolio{
+        padding:60px;
+    }
+
+    .heroport{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .left-portfolio,
+    .right-portfolio{
+        width:100%;
+        max-width:700px;
+    }
+
+    .contact-container{
+        flex-direction:column;
+        gap:40px;
+    }
+}
+
+
+/* =======================
+MOBILE
+======================= */
+@media (max-width:768px){
+    
+    body{
+        margin-top:70px;
+        overflow-x:hidden;
+    }
+
+    .intro2{
+        font-size:42px;
+        line-height:1.1;
+    }
+
+    .highlight{
+        font-size:42px;
+    }
+
+    #Home,
+    #Portfolio,
+    #Contact{
+        padding:30px 20px;
+        margin:0;
+        scroll-margin-top: 50px;
+    }
+
+    .heroport{
+        flex-direction:column;
+        gap:15px;
+        width:100%;
+    }
+
+    .left-portfolio,
+    .right-portfolio{
+        width:100%;
+    }
+
+    .card,
+    .card-shortanm{
+        width:100%;
+        padding:15px;
+    }
+
+    img,
+    video{
+        width:100%;
+        height:auto;
+        max-width:100%;
+    }
+
+    .borderhor .intro1{
+        font-size:38px;
+    }
+
+    .judul-skill{
+        font-size:22px;
+    }
+
+    .navigasi ul{
+        gap:30px;
+        font-size:16px;
+        padding:15px;
+    }
+
+}
