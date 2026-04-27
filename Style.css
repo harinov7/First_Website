@@ -372,12 +372,27 @@ img {
     margin-top:30px;
     display:grid;
     gap:20px;
+    color: rgb(168, 162, 162);
 }
 
 .social{
     margin-top:50px;
     display:flex;
     gap:20px;
+}
+
+.fa-brands.fa-github,
+.fa-brands.fa-discord,
+.fa-brands.fa-instagram {
+    color: rgb(168, 162, 162);
+    font-size: 18px;
+}
+
+.fa-brands.fa-github:hover,
+.fa-brands.fa-discord:hover,
+.fa-brands.fa-instagram:hover {
+    color: var(--primarily-color);
+    transition: 0.5s;
 }
 
 /* kanan */
@@ -494,6 +509,15 @@ MOBILE
         padding:30px 20px;
         margin:0;
         scroll-margin-top: 50px;
+    }
+
+    .tooltip,
+    .mark,
+    .mark-modelling,
+    .mark-lrc,
+    .mark-rigging,
+    .mark-shortanm{
+        display:none;
     }
 
     .heroport{
